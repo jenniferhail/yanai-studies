@@ -1,5 +1,9 @@
 @use 'variables' as v;
 
+* {
+  cursor: none;
+}
+
 body {
   background: v.$bg;
   padding-top: 70px;
@@ -18,7 +22,7 @@ main {
 .content {
   width: 45%;
   padding: 400px 0;
-  font-family: "Noto Serif JP", serif;
+  font-family: 'Noto Serif JP', serif;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;

@@ -5,6 +5,7 @@
   top: 0;
   width: 100%;
   cursor: pointer;
+  color: v.$black;
 
   .main_menu,
   .sub_menu {
@@ -16,6 +17,11 @@
 
   .main_menu {
     z-index: 3;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 

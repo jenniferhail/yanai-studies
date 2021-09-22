@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+
+.cursor {
+  pointer-events: none;
+
+  &__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999;
+    transform: translate(-50%, -50%);
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+    will-change: width, height, transform, border;
+    mix-blend-mode: difference;
+
+    circle {
+      fill: v.$bg;
+    }
+  }
+}

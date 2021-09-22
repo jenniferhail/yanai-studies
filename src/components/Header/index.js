@@ -1,3 +1,4 @@
+import cn from "classnames";
 import { Link, withRouter } from "react-router-dom";
 import styles from "./index.module.scss"
 
@@ -45,8 +46,8 @@ const Header = (props) => {
           Engage
         </Link>
       </li>
-      <li className="border lang">Eng</li>
-      <li className="border search"><svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <li className={cn(styles.border, styles.lang)}>Eng</li>
+      <li className={cn(styles.border, styles.search)}><svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.0964 8.6743C17.0964 12.8733 13.5333 16.3486 9.04822 16.3486C4.56312 16.3486 1 12.8733 1 8.6743C1 4.47526 4.56312 1 9.04822 1C13.5333 1 17.0964 4.47526 17.0964 8.6743Z" stroke="#323232" stroke-width="2" />
           <line y1="-1" x2="9.80968" y2="-1" transform="matrix(0.721869 0.69203 -0.721869 0.69203 14.9492 14.3325)" stroke="#323232" stroke-width="2" />
         </svg>

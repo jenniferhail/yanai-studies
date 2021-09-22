@@ -1,9 +1,9 @@
-import Main from "../Main"
+import styles from './index.module.scss'
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
   return (
     <>
-      <Main />
+      <main className={styles.main}>{children}</main>
     </>
   )
 }
