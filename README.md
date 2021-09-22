@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
 ![](https://img.shields.io/badge/storybook-fff?logo=storybook&labelColor=ff4785&logoColor=fff)
 
-# YOUR_PROJECTS_NAME_HERE
+# Yanai Studies
 
 ## What you need to know
 
