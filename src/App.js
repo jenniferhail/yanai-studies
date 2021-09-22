@@ -1,4 +1,5 @@
-import './App.scss';
+import 'normalize.css'
+import './styles/global.scss'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home, About, Experience, Explore, Engage } from "./pages";
 import { Header } from './components';

@@ -1,35 +1,20 @@
-$bg: #f1f0ec;
-$black: #323232;
-$border: 1px solid $black;
+@use '../../styles/variables' as v;
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap");
-
-body {
-  background: $bg;
-  padding-top: 70px;
-  color: $black;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-header {
+.header {
   position: fixed;
   top: 0;
   width: 100%;
   cursor: pointer;
 
-  .main-menu,
-  .sub-menu {
+  .main_menu,
+  .sub_menu {
     position: fixed;
     width: 100%;
-    background: $bg;
+    background: v.$bg;
     transition: top 0.3s ease-in-out;
   }
 
-  .main-menu {
+  .main_menu {
     z-index: 3;
   }
 }
@@ -65,7 +50,7 @@ header {
   }
 }
 
-.main-menu {
+.main_menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,11 +82,11 @@ header {
   }
 
   .border {
-    border-left: $border;
+    border-left: v.$border;
   }
 }
 
-.sub-menu {
+.sub_menu {
   .menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -109,13 +94,13 @@ header {
 
   li {
     &:not(:last-child) {
-      border-right: $border;
+      border-right: v.$border;
     }
   }
 }
 
 nav {
-  border-bottom: $border;
+  border-bottom: v.$border;
 }
 
 .logo {
@@ -125,19 +110,4 @@ nav {
   svg {
     height: 20px;
   }
-}
-
-main {
-  padding: 45px;
-}
-
-.content {
-  width: 45%;
-  padding: 400px 0;
-  font-family: "Noto Serif JP", serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 56px;
-  letter-spacing: -0.01em;
 }

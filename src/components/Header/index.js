@@ -1,10 +1,13 @@
 import { Link, withRouter } from "react-router-dom";
+import styles from "./index.module.scss"
+
+// nav-up
 
 const Header = (props) => {
   return (
-    <header className="nav-up">
-  <nav className="main-menu">
-    <div className="logo">
+    <header className={styles.header}>
+  <nav className={styles.main_menu}>
+    <div className={styles.logo}>
       <Link to="/">
         <svg width="262" height="20" viewBox="0 0 262 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M41.5242 0H0V20H41.5242V0Z" fill="#323232" />
@@ -26,18 +29,18 @@ const Header = (props) => {
         </svg>
       </Link>
     </div>
-    <ul className="menu">
-      <li className={`menu-item ${props.location.pathname === "/experience" ? "active" : "" }`}>
+    <ul className={styles.menu}>
+      <li className={styles.menu_item + ` ${props.location.pathname === "/experience" ? "active" : "" }`}>
         <Link to="/experience">
           Experience
         </Link>
       </li>
-      <li className={`menu-item ${props.location.pathname === "/explore" ? "active" : "" }`}>
+      <li className={styles.menu_item + ` ${props.location.pathname === "/explore" ? "active" : "" }`}>
         <Link to="/explore">
           Explore
         </Link>
       </li>
-      <li className={`menu-item last ${props.location.pathname === "/engage" ? "active" : "" }`}>
+      <li className={styles.menu_item + ` last ${props.location.pathname === "/engage" ? "active" : "" }`}>
         <Link to="/engage">
           Engage
         </Link>
@@ -50,8 +53,8 @@ const Header = (props) => {
       </li>
     </ul>
   </nav>
-  {/* <nav className="sub-menu">
-    <ul className="menu">
+  {/* <nav className={styles.sub-menu}>
+    <ul className={styles.menu}>
       <li>
         <Link to="/about">
           About
