@@ -9,8 +9,8 @@
     left: 0;
     z-index: 9999999999999;
     transform: translate(-50%, -50%);
-    transition-duration: 100ms;
-    transition-timing-function: ease-out;
+    // transition-duration: 100ms;
+    // transition-timing-function: ease-out;
     will-change: width, height, transform, border;
     mix-blend-mode: difference;
 

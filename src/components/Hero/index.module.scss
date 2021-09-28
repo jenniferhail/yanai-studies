@@ -1,14 +1,39 @@
 @use '../../styles/variables' as v;
 
 .hero {
+  height: calc(100vh - 70px);
+  min-height: 800px;
+  width: 100%;
   display: flex;
 }
 
 .content,
 .animation {
-  flex: 0 0 50%;
+  flex: 0 1 50%;
+  width: 50%;
+  max-width: 50%;
 }
 
 .animation {
   background-color: v.$black;
+}
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  padding: 45px;
+}
+
+.bottom {
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
