@@ -1,6 +1,6 @@
 import { Layout } from '../components'
 
-const About = (props) => {
+const About = () => {
   return (
     <Layout>
       <div className="content">

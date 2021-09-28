@@ -1,6 +1,6 @@
 import { Layout } from '../components'
 
-const Experience = (props) => {
+const Experience = () => {
   return (
     <Layout>
       <div className="content">

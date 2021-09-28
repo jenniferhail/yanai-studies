@@ -1,6 +1,6 @@
 import { Hero, Layout } from '../components'
 
-const Home = (props) => {
+const Home = () => {
   return (
     <Layout>
       <Hero />

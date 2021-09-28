@@ -1,6 +1,6 @@
 import { Layout } from '../components'
 
-const Engage = (props) => {
+const Engage = () => {
   return (
     <Layout>
       <div className="content">

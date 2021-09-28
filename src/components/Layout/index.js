@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './index.module.scss'
 
 const Layout = ({ children }) => {
@@ -6,6 +7,10 @@ const Layout = ({ children }) => {
       <main className={styles.main}>{children}</main>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Layout

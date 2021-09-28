@@ -1,6 +1,6 @@
 import { Layout } from '../components'
 
-const Explore = (props) => {
+const Explore = () => {
   return (
     <Layout>
       <div className="content">
