@@ -1,5 +1,19 @@
 @use '../../styles/variables' as v;
 
+.wrapper {
+  display: flex;
+}
+
+.can {
+  display: flex;
+  height: 100%;
+  padding: 5rem 0;
+
+  img {
+    max-width: 150px;
+  }
+}
+
 .hero {
   height: calc(100vh - 70px);
   min-height: 800px;
