@@ -1,5 +1,5 @@
 // import cn from 'classnames'
-import Character from './character'
+// import Character from './character'
 import styles from './index.module.scss'
 // import { ReactComponent as Character } from '../../assets/character.svg'
 
@@ -15,9 +15,7 @@ const Hero = () => {
           <p>どこは同年ようやくその記憶方に対して。</p>
         </div>
       </div>
-      <div className={styles.animation}>
-        <Character />
-      </div>
+      <div className={styles.animation}>{/* <Character /> */}</div>
     </section>
   )
 }

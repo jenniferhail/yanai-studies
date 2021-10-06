@@ -2,7 +2,7 @@ import 'normalize.css'
 import './styles/global.scss'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home, About, Experience, Explore, Engage } from './pages'
-import { Header, Cursor } from './components'
+import { Header, Cursor, Footer } from './components'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/explore" exact component={() => <Explore />} />
           <Route path="/engage" exact component={() => <Engage />} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   )

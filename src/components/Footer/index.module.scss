@@ -1,0 +1,38 @@
+@use '../../styles/variables' as v;
+
+.canvas {
+  width: 100vw;
+}
+
+.footer {
+  position: relative;
+  text-align: center;
+
+  span {
+    text-transform: uppercase;
+  }
+
+  ul {
+    font-size: 48px;
+  }
+}
+
+.front,
+.back {
+  padding: 48px 0;
+}
+
+.front {
+  background-color: v.$black;
+  color: v.$white;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  background-color: v.$white;
+  color: v.$black;
+}
