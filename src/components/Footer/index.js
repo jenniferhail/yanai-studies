@@ -1,9 +1,4 @@
-import PropTypes from 'prop-types'
-import cn from 'classnames'
-import { Link, withRouter } from 'react-router-dom'
 import styles from './index.module.scss'
-import { ReactComponent as Logo } from '../../assets/logo.svg'
-import { ReactComponent as Search } from '../../assets/search.svg'
 import { Canvas } from '..'
 
 const Footer = () => {

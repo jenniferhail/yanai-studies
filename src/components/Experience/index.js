@@ -1,6 +1,6 @@
 // import cn from 'classnames'
 import styles from './index.module.scss'
-import Poster from '../../assets/event-poster.jpg'
+// import Poster from '../../assets/event-poster.jpg'
 
 const Experience = () => {
   return (
