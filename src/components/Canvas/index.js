@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react'
 
 const Canvas = (props) => {
   const canvasRef = useRef(null)
-  let context
-  const brushRadius = 5
+  const brushRadius = 22
 
   const draw = (ctx) => {
     ctx.fillStyle = '#323232'
@@ -25,6 +24,7 @@ const Canvas = (props) => {
   }
 
   const drawDot = (mouseX, mouseY) => {
+    const context = canvasRef.current.getContext('2d')
     context.beginPath()
     context.arc(mouseX, mouseY, brushRadius, 0, 2 * Math.PI, true)
     context.fillStyle = '#fff'
@@ -38,25 +38,64 @@ const Canvas = (props) => {
   }
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    context = canvas.getContext('2d')
-    draw(context)
+    const myCanvas = canvasRef.current
+    const originalHeight = myCanvas.height
+    const originalWidth = myCanvas.width
+    render(myCanvas, originalHeight, originalWidth)
   }, [])
 
-  // function resizeCanvas(canvas) {
-  //   const { width, height } = canvas.getBoundingClientRect()
+  function render(myCanvas, originalHeight, originalWidth) {
+    let dimensions = getObjectFitSize(
+      true,
+      myCanvas.clientWidth,
+      myCanvas.clientHeight,
+      myCanvas.width,
+      myCanvas.height
+    )
 
-  //   if (canvas.width !== width || canvas.height !== height) {
-  //     const { devicePixelRatio: ratio = 1 } = window
-  //     const context = canvas.getContext('2d')
-  //     canvas.width = width * ratio
-  //     canvas.height = height * ratio
-  //     context.scale(ratio, ratio)
-  //     return true
-  //   }
+    const dpr = window.devicePixelRatio || 1
+    myCanvas.width = dimensions.width * dpr
+    myCanvas.height = dimensions.height * dpr
 
-  //   return false
-  // }
+    let ctx = myCanvas.getContext('2d')
+    let ratio = Math.min(
+      myCanvas.clientWidth / originalWidth,
+      myCanvas.clientHeight / originalHeight
+    )
+
+    ctx.scale(ratio * dpr, ratio * dpr) // adjust this!
+    draw(ctx)
+  }
+
+  // adapted from: https://www.npmjs.com/package/intrinsic-scale
+  function getObjectFitSize(
+    contains /* true = contain, false = cover */,
+    containerWidth,
+    containerHeight,
+    width,
+    height
+  ) {
+    var doRatio = width / height
+    var cRatio = containerWidth / containerHeight
+    var targetWidth = 0
+    var targetHeight = 0
+    var test = contains ? doRatio > cRatio : doRatio < cRatio
+
+    if (test) {
+      targetWidth = containerWidth
+      targetHeight = targetWidth / doRatio
+    } else {
+      targetHeight = containerHeight
+      targetWidth = targetHeight * doRatio
+    }
+
+    return {
+      width: targetWidth,
+      height: targetHeight,
+      x: (containerWidth - targetWidth) / 2,
+      y: (containerHeight - targetHeight) / 2,
+    }
+  }
 
   return (
     <canvas
